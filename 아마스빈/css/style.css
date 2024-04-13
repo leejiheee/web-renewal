@@ -1,19 +1,192 @@
 @charset "UTF-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
-div{
-  width: 100px;
-  height: 100px;
-  background-color: blueviolet;
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+ol, ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+input{
+  display: none;
+}
+/* 헤더 */
+label[for="trigger"]{
+  display: none;
+  float: right;
+}
+.header_wrap{
+  width: 62.5rem;
+  height: 5.625rem;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.header_wrap > .logo{
+  width: 9.188rem;
+  height: 2.875rem;
+  background: url(../images/main_logo.png) no-repeat center / cover;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.header_wrap > .menu{
+  position: absolute;
+  width: 51.25rem;
+  height: 5.625rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.125rem;
+  right: 0;
+  cursor: pointer;
 }
 
+.header_wrap > .menu > li:hover > a{
+  color: #387FAF;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+.header_wrap .menu > li{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.header_wrap .menu > li:last-child{
+  margin: 0;
+}
+.header_wrap .menu > li:hover .sub-menu{
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+.sub-menu{
+  position: absolute;
+  top: 100%;
+  display: inline-block;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: hidden;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0.375rem 0.375rem 0.281rem rgba(0, 0, 0, 0.1);
+}
+.sub-menu > li{
+  width: 8.938rem;
+  height: 3.125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sub-menu > li:hover{
+  background-color: #4BA5E2;
+  font-weight: 500;
+  cursor: pointer;
+  color: #fff;
+}
+/* 메인 */
+.banner{
+  width: 100%;
+  height: 24.813rem;
+}
 @media (max-width: 991px) {
-  div{
-    background-color: coral;
+  .header_wrap .menu{
+    display: none;
   }
+  .header_wrap{
+    width: 36rem;
+    height: 3.938rem;
+  }
+  .header_wrap .logo{
+    width: 5.75rem;
+    height: 1.813rem;
+  }
+  label[for=trigger] {
+    /* border: 1px solid red; */
+    width: 21px;
+    height: 16px;
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  
+  label[for=trigger] span {
+    position: absolute;
+    height: 2px;
+    background-color: #000;
+    width: 100%;
+    transition: 0.3s;
+  }
+  label[for=trigger] span:nth-child(1) {
+    top: 0;
+  }
+  label[for=trigger] span:nth-child(2) {
+    top: 50%;
+  }
+  label[for=trigger] span:nth-child(3) {
+    top: 100%;
+  }
+  input[id=trigger]:checked + label[for=trigger] span:nth-child(1) {
+    top: 50%;
+    transform: rotate(45deg);
+  }
+  input[id=trigger]:checked + label[for=trigger] span:nth-child(2) {
+    opacity: 0;
+  }
+  input[id=trigger]:checked + label[for=trigger] span:nth-child(3) {
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+
 }
 
 @media (max-width:575px) {
-  div{
-    background-color: dodgerblue;
+  .header_wrap .menu{
+    display: none;
+  }
+  .header_wrap{
+    width: 19.5rem;
+    height: 2.5rem;
+  }
+  .header_wrap .logo{
+    width: 3.875rem;
+    height: 1.188rem;
+  }
+  label[for=trigger] {
+    width: 18px;
+    height: 14px;
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  label[for=trigger] span {
+    position: absolute;
+    height: 2px;
+    background-color: #000;
+    width: 100%;
+    transition: 0.3s;
+  }
+  label[for=trigger] span:nth-child(1) {
+    top: 0;
+  }
+  label[for=trigger] span:nth-child(2) {
+    top: 50%;
+  }
+  label[for=trigger] span:nth-child(3) {
+    top: 100%;
   }
 }
