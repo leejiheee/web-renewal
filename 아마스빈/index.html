@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>아마스빈</title>
   <link rel="stylesheet" href="/아마스빈/css/style.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 </head>
 <body>
   <header>
@@ -33,19 +34,173 @@
         <span></span>
         <span></span>
       </label>
-      
+      <ul class="tab_menu">
+        <li>
+          <input type="checkbox" id="dropdown">
+          <a href="#"><p>BRAND</p><label for="dropdown" class="xi-angle-down"></label></a>
+          <ul class="tab_sub-menu">
+            <li>BI</li>
+            <li>재료</li>
+            <li>캐릭터</li>
+          </ul>
+        </li>
+        <li><a href="#">MENU</a></li>
+        <li><a href="#">MEMBERSHIP</a></li>
+        <li><a href="#">가맹문의</a></li>
+        <li><a href="#">고객문의</a></li>
+      </ul>
     </div>
   </header>
   <main>
-    <section class="banner">
-      <div class="banner_inner">
-        <!-- <img src="../아마스빈/images/banner_sb_pc.jpg" alt="딸기신메뉴" width="100%" height="397px" style="object-fit: contain;"> -->
+    <section>
+      <input type="radio" id="banner1" name="main_banner" checked>
+      <input type="radio" id="banner2" name="main_banner">
+      <input type="radio" id="banner3" name="main_banner">
+      <div class="banner_wrap">
+        <div class="banner1">
+          <div class="banner_inner">
+            <div class="banner_img">
+              <picture>
+                <source srcset="../아마스빈/images/banner_sb_tab.svg" media="(max-width: 991px)">
+                <img src="../아마스빈/images/banner_sb.svg" alt="딸기신메뉴">
+              </picture>
+              <picture>
+                <source srcset="../아마스빈/images/banner_stbs_phone.png" media="(max-width: 575px)">
+                <source srcset="../아마스빈/images/banner_stbs_tab.png" media="(max-width: 991px)">
+                <img src="../아마스빈/images/banner_stbs.png" alt="딸기신메뉴" >
+              </picture>
+            </div>
+            <div class="banner_contents">
+              <h2>봄 신메뉴</h2>
+              <h1>Berry<br/>Holic</h1>
+              <p>아마스빈에서 느껴보는 봄의 맛!</p>
+              <button>메뉴 보러가기</button>
+            </div>
+          </div>
+        </div>
+        <div class="banner2">
+          <div class="banner_inner">
+            <div class="banner_img">
+              <img src="../아마스빈/images/banner_1L.svg" alt="1L보틀" width="539px" height="434px">
+            </div>
+            <div class="banner_contents">
+              <h3>BOTTLE</h3>
+              <h2>1L 대용량 보틀</h2>
+              <h1>"더 크게, 더 맛있게!"</h1>
+              <button>메뉴 보러가기</button>
+            </div>
+          </div>
+        </div>
+        <div class="banner3">
+          <div class="banner_inner">
+            <div class="banner_img">
+              <img src="../아마스빈/images/banner_bk.svg" alt="흑당버블티" width="435px" height="435px">
+              <picture>
+                <source srcset="../아마스빈/images/banner_blks_phone.png" media="(max-width: 575px)">
+                <source srcset="../아마스빈/images/banner_blks_tab.png" media="(max-width: 991px)">
+                <img src="../아마스빈/images/banner_blks.png" alt="흑당버블티">
+              </picture>
+            </div>
+            <div class="banner_contents">
+              <h3>베스트메뉴</h3>
+              <h2>대만 야시장 ‘흑당 버블티’</h2>
+              <h1>달콤한 흑당으로 당 충전!</h1>
+              <button>메뉴 보러가기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="banner_slider">
+        <label for="banner1"></label>
+        <label for="banner2"></label>
+        <label for="banner3"></label>
       </div>
     </section>
-    <section></section>
-    <section></section>
-    <section></section>
+    <section class="container">
+      <div class="title">
+        <img src="../아마스빈/images/best.png" alt="베스트메뉴">
+        <h1>아마스빈 <span>인기 메뉴</span></h1>
+        <p>Best Menu</p>
+      </div>
+      <div class="menu_slide">
+        <span class="xi-angle-left prev"></span>
+        <div class="slide_wrap">
+          <ul class="items">
+            <li class="item">
+              <div class="menu_img"></div>
+              <p>초코버블티</p>
+            </li>
+            <li class="item">
+              <div class="menu_img"></div>
+              <p>오레오쉐이크</p>
+            </li>
+            <li class="item">
+              <div class="menu_img"></div>
+              <p>흑당버블티</p>
+            </li>
+            <li class="item">
+              <div class="menu_img"></div>
+              <p>얼그레이밀크티</p>
+            </li>
+            <li class="item">
+              <div class="menu_img"></div>
+              <p>아메리카노</p>
+            </li>
+            <li class="item">
+              <div class="menu_img"></div>
+              <p>사하라</p>
+            </li>
+            <li class="item">
+              <div class="menu_img"></div>
+              <p>타로버블티</p>
+            </li>
+          </ul>
+        </div>
+        <span class="xi-angle-right next"></span>
+      </div>
+      <button class="menu_more"><a href="">전체메뉴보기</a></button>
+    </section>
+    <section class="container">
+      <div class="delivery">
+        <div class="delivery_wrap">
+          <div class="delivery_contents">
+            <p>아마스빈,<br/>
+              이제 배달로 받아보세요!</p>
+            <div class="delivery_icons">
+              <img src="../아마스빈/images/dv_icon1.png" alt="배달특급">
+              <img src="../아마스빈/images/dv_icon2.png" alt="쿠팡이츠">
+              <img src="../아마스빈/images/dv_icon3.png" alt="배달의민족">
+              <img src="../아마스빈/images/dv_icon4.png" alt="요기요">
+            </div>
+          </div>
+          <div class="delivery_img">
+            <img src="../아마스빈/images/delivery.png" alt="아마스빈배달">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container">
+      <div class="beverages">
+        <div class="beverages_wrap">
+          <div class="beverages_title">
+            <h1></h1>
+            <p></p>
+          </div>
+          <div class="beverages_contents">
+            <div class="content">
+              <img src="../아마스빈/images/make1.jpg" alt="하동잎">
+              <h3>100% 하동잎</h3>
+              <p>왕의 녹차 경남 하동의 말차를 참가물 없이
+                100% 녹차잎만 갈아 낸 원료로 사용합니다.</p>
+              <div class="matcha"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <footer></footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="../아마스빈/js/custom.js"></script>
 </body>
 </html>
