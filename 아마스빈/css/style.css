@@ -295,10 +295,24 @@ input[id="banner3"]:checked ~ .banner_wrap .banner3{
   justify-content: center;
   align-items: center; 
   margin-top: 4.25rem;
+  flex-direction: column;
 }
-.menu_slide > span{
-  font-size: 3rem;
+.menu_control {
+  margin-left: auto;
+  margin-top: 2rem;
+  margin-right: 5vw;
+}
+.menu_control > span{
+  font-size: 1rem;
+  line-height: 2.5rem;
+  width: 2.5rem;
+  opacity: 50%;
+  border-radius: 50%;
+  color: #222222;
   cursor: pointer;
+  background-color: #dfdfdf;
+  height: 2.5rem;
+  text-align: center;
 }
 .menu_slide .slide_wrap{
   position: relative;
@@ -308,7 +322,7 @@ input[id="banner3"]:checked ~ .banner_wrap .banner3{
 }
 .items{
   position: absolute;
-  width: calc((218px + 2.5vw) * 7 - 2.5vw);
+  width: calc((218px + 2.5vw) * 7);
   left: 0;
   transition: 0.5s;
   transform: translateY(5%);
@@ -316,15 +330,14 @@ input[id="banner3"]:checked ~ .banner_wrap .banner3{
 }
 .item{
   float: left;
-  width: 218px;
-  margin-right: 2.5vw;
+  width: calc(218px + 2.5vw);
 }
 .item:hover{
   transition: 0.5s;
   transform: translateY(-5%);
 }
 .menu_img{
-  width: 13.6rem;
+  width: calc(218px + 2.5vw);
   height: 13.6rem;
 }
 .items .item:nth-child(1) .menu_img{
@@ -354,7 +367,7 @@ input[id="banner3"]:checked ~ .banner_wrap .banner3{
 .item > p{
   font-size: 1.125rem;
   text-align: center;
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 1.6rem;
 }
 .menu_more{
@@ -417,20 +430,68 @@ input[id="banner3"]:checked ~ .banner_wrap .banner3{
   height: 24.4rem;
 }
 
+.delivery_img {
+  display: none;
+  animation: delivery 1.5s;
+}
+
+@keyframes delivery{
+  0%{
+    transform: scale(0%);
+  }
+
+  100%{
+    transform: scale(100%);
+  }
+}
+
 /* section4 */
+.beverages_title{
+  margin-top: 9rem;
+  text-align: center;
+}
+.beverages_title > h1{
+  font-size: 2.37rem;
+  color: #387FAF;
+}
+.beverages_title > p{
+  margin-top: 1.25rem;
+  font-size: 1.125rem;
+}
+.beverages_contents{
+  display: flex;
+  width: 71.25rem;
+  justify-content: space-between;
+  margin: 6.87rem auto 0;
+}
 .beverages_contents .content{
   width: 13.7rem;
   height: 25.6rem;
   position: relative;
   border-radius: 8.87rem;
+  box-shadow: 0px 3px 15px 0 rgba(0, 0, 0, 0.15);
 }
 .content > img{
   width: 13.7rem;
   height: 13.7rem;
-  position: absolute;
-  top: 0;
   object-fit: fill;
   border-radius: 50%;
+}
+.content_text{
+  text-align: center;
+  width: 11.7rem;
+  margin: 0 auto;
+}
+.content_text > h3{
+  font-size: 1.25rem;
+  color: #387FAF;
+  margin-top: 0.68rem;
+}
+.content_text > p{
+  font-size: 0.87rem;
+  letter-spacing: -0.5px;
+  margin-top: 1.06rem;
+  line-height: 1.3rem;
 }
 @media (max-width: 991px) {
   /* header */
@@ -617,14 +678,13 @@ input[id="banner3"]:checked ~ .banner_wrap .banner3{
     height: 15rem;
   }
   .items{
-    width: calc((180px + 4vw) * 7 - 4vw);
+    width: calc((180px + 4vw) * 7);
   }
   .item{
-    width: 180px;
-    margin-right: 4vw;
+    width: calc(180px + 4vw);
   }
   .menu_img{
-    width: 11.2rem;
+    width: calc(180px + 4vw);
     height: 11.2rem;
   }
   .item > p{
