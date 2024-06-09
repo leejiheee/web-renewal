@@ -431,8 +431,8 @@ input[id="banner3"]:checked ~ .banner_wrap .banner3{
 }
 
 .delivery_img {
-  display: none;
-  animation: delivery 1.5s;
+  transform: scale(0%);
+  transition: 1.5s;
 }
 
 @keyframes delivery{
@@ -446,6 +446,9 @@ input[id="banner3"]:checked ~ .banner_wrap .banner3{
 }
 
 /* section4 */
+.beverages{
+  margin-bottom: 13rem;
+}
 .beverages_title{
   margin-top: 9rem;
   text-align: center;
@@ -460,8 +463,9 @@ input[id="banner3"]:checked ~ .banner_wrap .banner3{
 }
 .beverages_contents{
   display: flex;
-  width: 71.25rem;
-  justify-content: space-between;
+  gap: 5%;
+  max-width: 71.25rem;
+  justify-content: center;
   margin: 6.87rem auto 0;
 }
 .beverages_contents .content{
@@ -474,7 +478,7 @@ input[id="banner3"]:checked ~ .banner_wrap .banner3{
 .content > img{
   width: 13.7rem;
   height: 13.7rem;
-  object-fit: fill;
+  object-fit: cover;
   border-radius: 50%;
 }
 .content_text{
@@ -492,6 +496,40 @@ input[id="banner3"]:checked ~ .banner_wrap .banner3{
   letter-spacing: -0.5px;
   margin-top: 1.06rem;
   line-height: 1.3rem;
+}
+
+/* footer */
+.footer_wrap{
+  background-color: #444444;
+  height: 15rem;
+  padding: 15vh 5vw 0;
+  justify-content: center;
+}
+.footer_top{
+  display: flex;
+  justify-content: space-around;
+}
+.footer_info{
+  display: flex;
+}
+.footer_info > span:first-child{
+  margin-right: 12vw;
+}
+.footer_info p{
+  margin-top: 1.4rem;
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 200;
+}
+.footer_info > span > p:first-child{
+  margin: 0;
+}
+.footer_wrap > p{
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 3rem;
 }
 @media (max-width: 991px) {
   /* header */
@@ -695,6 +733,76 @@ input[id="banner3"]:checked ~ .banner_wrap .banner3{
     width: 13.2rem;
     height: 2.56rem;
   }
+
+  /* section3 */
+  .delivery{
+    margin-top: 2.5rem;
+  }
+  .delivery_wrap{
+    min-width: 40rem;
+    gap: 10vw;
+  }
+  .delivery_contents > p{
+    font-size: 1.87rem;
+    line-height: 2.5rem;
+    white-space: nowrap;
+  }
+  .delivery_icons > img{
+    width: 2.8rem;
+    height: 2.8rem;
+    margin-right: 0.47rem;
+  }
+  .delivery_img > img{
+    width: 13.5rem;
+    height: 16rem;
+  }
+
+  /* section4 */
+  .beverages_title{
+    margin-top: 3.44rem;
+  }
+  .beverages_title > h1{
+    font-size: 1.87rem;
+  }
+  .beverages_title > p{
+    font-size: 0.87rem;
+    margin-top: 0.69rem;
+  }
+  .beverages_contents{
+    width: 33rem;
+    margin-top: 3.43rem;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .beverages_contents .content:nth-child(3),
+  .beverages_contents .content:nth-child(4){
+    margin-top: 3.4rem;
+  }
+
+  /* footer */
+  .footer_wrap{
+    padding: 5rem 5vw;
+  }
+  .footer_top{
+    gap: 5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer_info p{
+    margin-top: 1.4rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    text-align: center;
+  }
+  .footer_bottom{
+    font-size: 0.9rem;
+    font-weight: 200;
+  }
+  .footer_wrap > p{
+    font-size: 0.9rem;
+    font-weight: 200;
+  }
+
 }
 @media (max-width:575px) {
   .header_wrap .menu{
@@ -878,4 +986,106 @@ input[id="banner3"]:checked ~ .banner_wrap .banner3{
     margin-top: 2.8rem;
     font-size: 0.625rem;
   }
+
+  /* section3 */
+  .delivery{
+    position: relative;
+    height: 24.5rem;
+  }
+  .delivery_wrap{
+    flex-direction: column;
+    min-width: 20rem;
+  }
+  .delivery_contents > p{
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 2rem;
+  }
+  .delivery_icons{
+    width: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 5.87rem;
+  }
+  .delivery_icons > img{
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-right: 0.4rem;
+  }
+  .delivery_icons > img:nth-child(2),
+  .delivery_icons > img:nth-child(4){
+    margin-right: 0;
+  }
+  .delivery_icons > img:nth-child(3),
+  .delivery_icons > img:nth-child(4){
+    margin-top: 0.4rem;
+  }
+  .delivery_img{
+    position: absolute;
+    right: 5%;
+    bottom: -5%;
+  }
+  .delivery_img > img{
+    width: 7.5rem;
+    height: 8.8rem;
+  }
+
+  /* section4 */
+  .beverages_title{
+    margin-top: 2.6rem;
+  }
+  .beverages_title > h1{
+    font-size: 1.5rem;
+  }
+  .beverages_title > p{
+    font-size: 0.75rem;
+    margin-top: 0.625rem;
+  }
+  .beverages_contents{
+    width: 20rem;
+    margin-top: 3rem;
+  }
+  .beverages_contents .content{
+    width: 11rem;
+    height: 20.5rem;
+  }
+  .beverages_contents .content:nth-child(2),
+  .beverages_contents .content:nth-child(3),
+  .beverages_contents .content:nth-child(4){
+    margin-top: 2rem;
+  }
+  .beverages_contents .content > img{
+    width: 11rem;
+    height: 11rem;
+  }
+  .content_text{
+    width: 9.37rem;
+  }
+  .content_text > h3{
+    font-size: 1rem;
+  }
+  .content_text > p{
+    font-size: 0.75rem;
+  }
+
+    /* footer */
+    .footer_wrap{
+      height: 30rem;
+      gap: 5rem;
+      padding: 3rem 5vw;
+    }
+    .footer_info{
+      flex-direction: column;
+    }
+    .footer_info > span:first-child{
+      margin-right: 0;
+      margin-bottom: 4rem;
+    }
+    .footer_info > span > p{
+      margin-top: 1.4rem;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      text-align: center;
+    }
 }

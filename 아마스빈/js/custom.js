@@ -13,26 +13,20 @@ function vwToPx(vwValue) {
   const pxValue = (vwValue * viewportWidth) / 100;
   return pxValue;
 }
-const home4EventHandler = () => {
-  const deliveryImg = document.querySelector('.delivery_img');
-  const windowHeight = window.innerHeight;
 
-  // 요소가 화면에 들어올 때
-  if (deliveryImg.getBoundingClientRect().top < windowHeight - 200) {
-      // 200ms 후에 애니메이션 시작
-      setTimeout(() => {
-          deliveryImg.style.display = 'block'; // 요소 표시
-          deliveryImg.style.animation = 'delivery 1.5s'; // 애니메이션 적용
-      }, 200);
-      window.removeEventListener('scroll', home4EventHandler); // 스크롤 이벤트 리스너 제거
-  }
-};
+var observer = new IntersectionObserver((e)=>{
+  e.forEach((img)=>{
+    if(img.isIntersecting){
+      img.target.style.transform = 'scale(100%)';
+    }else{
+      img.target.style.transform = 'scale(0%)';
+    }
+  })
+})
 
-// 스크롤 이벤트 리스너 등록
-window.addEventListener('scroll', home4EventHandler);
+var delivery = document.querySelector('.delivery_img');
+observer.observe(delivery);
 
-// 스크롤 이벤트 리스너 등록
-window.addEventListener('scroll', home4EventHandler);
 if (matchMedia("screen and (min-width: 992px)").matches) {
   console.log("데스크탑");
   var slides = document.querySelector('.items'),
